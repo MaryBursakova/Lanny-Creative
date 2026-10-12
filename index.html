@@ -1,74 +1,102 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lanny Strategy Lab — прототип</title>
-<link rel="stylesheet" href="css/style.css"></head>
-<body>
-<nav><div class="logo">LANNY <span>STRATEGY LAB</span></div><div class="navlinks"><a href="#systems">Системы</a><a href="#tasks">Задачи</a><a href="#products">Инструменты</a><a href="#consumer">Consumer</a></div><a class="btn dark" href="#contact">Поставить задачу</a></nav>
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lanny Group — Интеллект в действии</title><meta name="description" content="Lanny Group — стратегия, потребительские исследования, разработка продуктов и производственные технологии"><style>
+:root{--ink:#201c21;--muted:#716a70;--accent:#a83383;--line:#eae4e6;--paper:#faf8f6;--rose:#f8eff3;--dark:#2d232b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:15px/1.58 Arial,'Segoe UI',sans-serif}a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}button{cursor:pointer}h1,h2,h3,p{margin-top:0}h1,h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.035em;line-height:1.12;font-weight:500}h1{font-size:clamp(39px,4.3vw,68px)}h2{font-size:clamp(29px,3vw,43px)}h3{font-size:20px;line-height:1.3}p{color:#504a50}.wrap{max-width:1320px;margin:auto;padding:0 34px}.header{position:sticky;top:0;z-index:20;background:#fffefaed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{height:76px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}.brand img.word{width:174px;height:auto}.brand img.mark{width:28px;height:28px;object-fit:contain}.brand small{font-size:10px;line-height:1.2;border-left:1px solid #c9c3c6;padding-left:12px;color:#514c51}.links{display:flex;gap:18px;align-items:center;margin-left:auto}.links a{font-weight:700;font-size:12px;white-space:nowrap}.links a:hover,.links a.active{color:var(--accent)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 19px;border-radius:30px;background:var(--accent);color:white;font-weight:700;border:1px solid var(--accent);transition:.2s;white-space:nowrap}.btn:hover{background:#7e2663}.btn.light{background:white;color:var(--accent);border-color:#e7cedd}.btn.link{background:transparent;color:var(--accent);border-color:transparent;padding-left:0}.burger{display:none;border:0;background:transparent;font-size:25px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;font-weight:700}.hero{background:linear-gradient(112deg,#faf8f5 0%,#faf8f5 53%,#f1eae5 100%);overflow:hidden}.hero-inner{min-height:525px;display:grid;grid-template-columns:1.04fr .96fr;gap:30px;align-items:center}.hero h1{max-width:710px;margin:22px 0}.hero h1 em{font-style:normal;color:var(--accent);border-bottom:2px solid var(--accent)}.hero p{font-size:17px;max-width:530px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.sketch-scene{height:440px;position:relative;display:flex;align-items:center;justify-content:center}.tablet{width:min(100%,530px);height:365px;background:#fffdf9;border:11px solid #242124;border-radius:20px;box-shadow:18px 23px 40px #34242b20;transform:rotate(4deg);position:relative;overflow:hidden}.tablet .paper{width:100%;height:100%;background:repeating-linear-gradient(0deg,#fffdf9,#fffdf9 30px,#ece8e54d 31px);padding:23px 22px}.tablet svg{width:100%;height:240px}.tablet .scribble{position:absolute;bottom:18px;left:27px;font-family:'Comic Sans MS','Segoe Print',cursive;font-size:15px;transform:rotate(-4deg)}.hand{font-family:'Comic Sans MS','Segoe Print',cursive;font-style:italic;font-size:18px;line-height:1.2;color:#373137;transform:rotate(-6deg)}.float-note{position:absolute;right:-2px;top:5px;transform:rotate(6deg);font-size:20px}.section{padding:74px 0}.section.alt{background:var(--paper)}.heading{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:27px}.heading h2{margin:9px 0 0}.heading p{max-width:420px;margin:0}.task-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.task{border:1px solid var(--line);border-radius:13px;padding:21px;min-height:205px;display:flex;flex-direction:column;transition:.2s;background:#fff;position:relative}.task:hover,.card:hover{transform:translateY(-3px);box-shadow:0 13px 32px #33252e12}.task.feature{background:#f8edf1;border-color:#edd5e0}.num{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px}.task h3{font-size:17px;margin:23px 0 14px;font-weight:600}.arrow{margin-top:auto;align-self:flex-end;width:32px;height:32px;border-radius:50%;border:1px solid #e8d4dd;display:grid;place-items:center;color:var(--accent)}.task-note{position:absolute;bottom:-29px;left:20px;font-size:14px;white-space:nowrap;z-index:2}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:15px;background:white;padding:25px;transition:.2s;display:flex;flex-direction:column;min-height:225px}.card p{flex:1}.card h3{margin:13px 0}.card .more{font-size:13px;font-weight:700;color:var(--accent)}.banner{background:#f6f1ed;border-radius:22px;padding:37px;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}.banner h2{margin:10px 0}.banner .hand{font-size:24px;max-width:350px;justify-self:center}.dark{background:var(--dark);color:white}.dark p{color:#e8dde4}.dark .eyebrow{color:#d69abc}.dark .btn{background:white;color:var(--accent);border-color:white}.cta{padding:50px;border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{max-width:650px;margin:8px 0}.pagehead{padding:62px 0;background:#faf7f5;border-bottom:1px solid var(--line)}.pagehead h1{font-size:clamp(35px,4vw,57px);max-width:940px;margin:15px 0}.pagehead p{font-size:18px;max-width:800px}.crumb{font-size:12px;color:var(--muted)}.crumb a{color:var(--accent)}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start}.bullets{list-style:none;padding:0;margin:20px 0 30px;counter-reset:step}.bullets li{padding:13px 0 13px 43px;border-bottom:1px solid var(--line);position:relative}.bullets li:before{counter-increment:step;content:counter(step,decimal-leading-zero);position:absolute;left:0;color:var(--accent);font-weight:700}.aside{background:#f7f3f1;padding:32px;border-radius:18px}.aside h3{font-family:Georgia,serif;font-size:27px}.note{font-size:13px;color:var(--muted)}.coming{border:1px solid #e8dedf;background:#f8f5f1;border-radius:20px;padding:40px;position:relative;overflow:hidden;min-height:340px}.coming h2{max-width:610px;margin:15px 0}.coming .hand{margin:20px 0 0;transform:rotate(-3deg);color:var(--accent)}.coming svg{position:absolute;right:30px;bottom:10px;width:230px;opacity:.55}.event{display:grid;grid-template-columns:135px 1fr auto;align-items:center;gap:22px;border-bottom:1px solid var(--line);padding:25px 0}.event h3{margin:0 0 7px}.event p{margin:0 0 5px}.month{color:var(--accent);font-weight:700}.form{display:grid;gap:12px}.form input,.form textarea{border:1px solid #ded4da;border-radius:10px;padding:13px 14px;width:100%;background:white}.form textarea{min-height:125px;resize:vertical}.footer{background:#292129;color:white;padding:45px 0 28px}.footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.footer a{display:block;color:#e9dfe5;margin:7px 0;font-size:13px}.footer small{color:#b7a7b2}.footer .brand img.word{filter:brightness(0) invert(1)}.footer .brand img.mark{width:23px;height:23px}.hr{border:0;border-top:1px solid #ffffff20;margin:30px 0 18px}.lab-link{display:inline-block;color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:4px}.quote{border-left:2px solid var(--accent);padding:8px 0 8px 20px;margin:25px 0;font-family:Georgia,serif;font-size:21px}.pill{display:inline-block;border:1px solid #e7d2dd;border-radius:40px;padding:5px 10px;font-size:11px;color:var(--accent)}
+@media(max-width:1160px){.links{gap:10px}.links a{font-size:11px}.brand img.word{width:145px}.brand small{display:none}.task-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:850px){.nav{height:67px}.burger{display:block;margin-left:auto}.links{display:none;position:absolute;top:66px;left:0;right:0;background:white;padding:20px 28px;box-shadow:0 12px 20px #0001;flex-direction:column;align-items:stretch}.links.open{display:flex}.nav>.btn{display:none}.hero-inner{grid-template-columns:1fr;padding-top:50px;padding-bottom:25px}.sketch-scene{height:340px}.tablet{height:300px}.tablet svg{height:190px}.cards{grid-template-columns:repeat(2,1fr)}.task-grid{grid-template-columns:repeat(2,1fr)}.split,.banner{grid-template-columns:1fr}.footer .cols{grid-template-columns:1fr 1fr}.event{grid-template-columns:100px 1fr}.event .btn{grid-column:2;justify-self:start}}@media(max-width:550px){.wrap{padding:0 18px}.hero h1{font-size:40px}.section{padding:47px 0}.task-grid,.cards{grid-template-columns:1fr}.task{min-height:160px}.task h3{margin:12px 0}.task-note{display:none}.heading{display:block}.heading p{margin-top:12px}.sketch-scene{height:280px}.tablet{height:260px}.tablet svg{height:160px}.float-note{display:none}.cta{display:block;padding:29px}.footer .cols{grid-template-columns:1fr}.event{grid-template-columns:1fr}.event .btn{grid-column:1}.banner{padding:25px}}
+</style>
+<style>
+/* Фирменный фон Lanny: видимые полупрозрачные оригинальные галочки */
+body{position:relative;background:#faf8f6}
+#lanny-pattern{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#lanny-pattern img{position:absolute;width:52px;height:52px;object-fit:contain;opacity:.40;will-change:transform}
+.header{z-index:30}
+main,.footer{position:relative;z-index:1}
+.hero{background:linear-gradient(105deg,rgba(250,248,245,.92),rgba(250,248,245,.65))!important;position:relative}
+.hero-inner{grid-template-columns:1.02fr .98fr;min-height:535px}
+.hero-inner>div:first-child{position:relative;z-index:2}
+.factory-scene{height:475px;position:relative;overflow:visible;display:block}
+.factory-art{height:100%;width:118%;max-width:none;object-fit:contain;object-position:center;position:absolute;left:-8%;top:0;filter:drop-shadow(0 15px 20px rgba(40,30,30,.06))}
+.section:not(.alt){background:rgba(255,255,255,.88)}
+.section.alt{background:rgba(250,248,246,.88)}
+.pagehead{background:rgba(250,247,245,.88)}
+@media(max-width:850px){.factory-scene{height:330px}.factory-art{width:100%;left:0}}
+@media(max-width:550px){.factory-scene{height:240px}}
+@media(prefers-reduced-motion:reduce){#lanny-pattern img{will-change:auto}}
+</style>
 
-<section class="hero">
-<div><div class="eyebrow">Lanny Group / Strategic Intelligence</div><h1>Решения<br>начинаются<br><span class="blue">с понимания.</span></h1>
-<p class="lead">Стратегическая аналитика для продуктовых компаний. Соединяем рынок, потребителя, продукт, технологии и инновации, чтобы ответить на главный вопрос бизнеса: <b>что делать дальше?</b></p>
-<p><a class="btn acid" href="#tasks">Поставить задачу →</a> <a class="btn" href="#products">Наши инструменты ↓</a></p></div>
-<div class="orbit"><b>DECISION</b><span class="tag t1">MARKET</span><span class="tag t2">CONSUMER</span><span class="tag t3">INNOVATION</span><span class="tag t4">PRODUCT</span></div>
-</section>
-
-<section><div class="eyebrow">Не начинаем с метода</div><h2>Данных становится больше.<br>Принимать решения легче не становится.</h2>
-<div class="questions">
-<div class="q"><b>Есть свободная линия.</b>Что на ней выпускать?</div><div class="q"><b>Категория растёт.</b>Стоит ли в неё входить?</div><div class="q"><b>Продажи падают.</b>Что именно перестало работать?</div>
-<div class="q"><b>Появился тренд.</b>Это сигнал или просто шум?</div><div class="q"><b>Есть три концепции.</b>В какую инвестировать?</div><div class="q"><b>Конкурент растёт.</b>За счёт чего?</div>
-</div><p class="lead"><b>Strategy Lab начинается с решения, которое вам нужно принять.</b></p></section>
-
-<section><div class="eyebrow">Принцип</div><h2>От информации — к действию.</h2>
-<div class="flow"><div><span>01</span><strong>DATA</strong>Рынок · ритейл · продажи · новинки · цены · патенты</div><div><span>02</span><strong>UNDERSTANDING</strong>Что происходит? Почему? Что меняется?</div><div><span>03</span><strong>DECISION</strong>Где возможность? Что приоритетно?</div><div class="active"><span>04</span><strong>ACTION</strong>Запустить · изменить · отказаться · масштабировать</div></div></section>
-
-<section id="systems"><div class="eyebrow">Intelligence systems</div><h2>Один вопрос.<br>Пять углов зрения.</h2>
-<div class="cards">
-<div class="card"><div class="small">01</div><h3>MARKET</h3><p>Что происходит с рынком? Категории, конкуренты, цены, каналы, международные рынки.</p><a href="#products">Исследовать рынок →</a></div>
-<div class="card"><div class="small">02</div><h3>CONSUMER</h3><p>Почему выбирают? Потребности, барьеры, вкус, упаковка, концепция и цена.</p><a href="#consumer">Понять потребителя →</a></div>
-<div class="card"><div class="small">03</div><h3>PRODUCT</h3><p>Что изменить? Рецептура, органолептика, упаковка, цена, конкуренты, экономика.</p><a href="#products">Разобрать продукт →</a></div>
-<div class="card"><div class="small">04</div><h3>INNOVATION</h3><p>Что появляется? Продукты, ингредиенты, технологии, патенты, упаковка и дизайн.</p><a href="#products">Найти возможности →</a></div>
-<div class="card"><div class="small">05</div><h3>GROWTH</h3><p>Где следующий рост? Категории, аудитории, портфель, мощности, новые рынки.</p><a href="#tasks">Найти точку роста →</a></div>
-</div></section>
-
-<section id="tasks"><div class="eyebrow">Task selector</div><h2>С чего начинается<br>ваша задача?</h2>
-<div class="selector"><div class="choices">
-<button class="sel" data-key="line">Нужно загрузить производство</button><button data-key="launch">Хочу запустить новый продукт</button><button data-key="growth">Хочу найти новую категорию</button><button data-key="sales">Хочу понять, почему продукт не растёт</button><button data-key="idea">Хочу проверить идею</button><button data-key="world">Хочу знать, что появляется в мире</button>
-</div><div class="route" id="route"></div></div></section>
-
-<section id="products"><div class="eyebrow">Products</div><h2>Не отчёты.<br>Инструменты для решений.</h2>
-<div class="products">
-<div class="product"><b>MARKET PULSE</b><p>Что изменилось на рынке?</p><em>ALWAYS ON →</em></div>
-<div class="product"><b>INNOVATION RADAR</b><p>Что появляется в мире?</p><em>DEEP DIVE →</em></div>
-<div class="product"><b>CATEGORY NAVIGATOR</b><p>Куда движется категория?</p><em>DEEP DIVE →</em></div>
-<div class="product"><b>CUSTOMER DECISION MAP</b><p>Почему потребитель выбирает?</p><em>CONSUMER →</em></div>
-<div class="product"><b>PRODUCT 360°</b><p>Что работает и не работает?</p><em>QUICK / DEEP →</em></div>
-<div class="product"><b>OPPORTUNITY MAP</b><p>Где находятся возможности?</p><em>STRATEGY →</em></div>
-<div class="product"><b>FUTURE SIGNALS</b><p>Что сегодня является слабым сигналом?</p><em>ALWAYS ON →</em></div>
-<div class="product"><b>GROWTH BLUEPRINT</b><p>Как превратить возможность в рост?</p><em>STRATEGY →</em></div>
-<div class="product"><b>STRATEGY COMPASS</b><p>Какое направление выбрать?</p><em>STRATEGY →</em></div>
-</div></section>
-
-<section class="band"><div class="eyebrow">Market Pulse</div><h2>Рынок не обновляется раз в год.<br>Почему аналитика должна?</h2><p class="lead">Постоянная система наблюдения: новинки · цены · ассортимент · ритейл · маркетплейсы · международные рынки · ингредиенты · тренды · технологии.</p><a class="btn" href="#contact">Обсудить Market Pulse →</a></section>
-
-<section id="consumer"><div class="eyebrow">Consumer Intelligence</div><h2>Не угадывать<br>за потребителя.<br><span class="blue">Спросить его.</span></h2>
-<p class="lead">Concept Test · Blind Test · Branded Test · Product Test · Packaging Test · Claims Test · Price Test · Comparative Test · Qual + Quant.</p>
-<p>Реальные потребители. Реальные продукты. Решение, которое можно использовать дальше.</p>
-<a class="btn acid" href="https://lanny.group/researches/" target="_blank" rel="noopener">Потребительские тестирования →</a></section>
-
-<section><div class="eyebrow">Product 360°</div><h2>Иногда проблема продукта<br>совсем не там, где её ищут.</h2>
-<p><span class="pill">ВКУС</span><span class="pill">СОСТАВ</span><span class="pill">ЦЕНА</span><span class="pill">УПАКОВКА</span><span class="pill">ПОЛКА</span><span class="pill">КОНКУРЕНТЫ</span><span class="pill">ПОТРЕБИТЕЛЬ</span><span class="pill">ЭКОНОМИКА</span></p></section>
-
-<section><div class="eyebrow">Innovation Radar</div><h2>Мы ищем не тренды.<br>Мы ищем то, что<br>может стать бизнесом.</h2>
-<p class="lead">Россия · Европа · США · Китай · Корея · Япония</p><p><span class="pill">PRODUCTS</span><span class="pill">INGREDIENTS</span><span class="pill">TECHNOLOGIES</span><span class="pill">PATENTS</span><span class="pill">PACKAGING</span><span class="pill">DESIGN</span></p></section>
-
-<section><div class="eyebrow">Strategic Decision Map</div><h2>Аналитика заканчивается там,<br>где начинается решение.</h2>
-<div class="flow"><div><strong>MARKET</strong>Что меняется?</div><div><strong>CONSUMER</strong>Что нужно?</div><div><strong>OPPORTUNITY</strong>Где возможность?</div><div class="active"><strong>ACTION</strong>Что делать?</div></div></section>
-
-<section><div class="eyebrow">Lanny ecosystem</div><h2>Мы можем не остановиться<br>на презентации.</h2><div class="eco"><b>STRATEGY LAB</b><i>→</i><b>CONSUMER</b><i>→</i><b>R&D</b><i>→</i><b>TECHNOLOGY</b><i>→</i><b>LAUNCH</b></div><p class="lead">Находим возможность, проверяем её на потребителе, создаём продукт и можем довести решение до реального запуска.</p></section>
-
-<section id="contact" class="accent"><div class="eyebrow">Start with a question</div><h2>Какое решение вам<br>нужно принять?</h2><p class="lead">Можно прийти не с техническим заданием, а с вопросом: «Что выпускать?», «Куда расти?», «Почему не продаётся?», «Стоит ли запускать?»</p><a class="btn dark" href="mailto:info@lanny.group">Поставить задачу →</a></section>
-<footer><b>LANNY STRATEGY LAB</b><p class="muted">Интерактивный прототип v0.1</p></footer>
-
-<script src="js/main.js"></script></body></html>
+<style>
+.product-flow-scene{position:relative;height:445px;overflow:hidden;background:transparent;isolation:isolate}
+.product-flow-track{position:absolute;inset:17% 0 15%;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,#000 13%,#000 88%,transparent 100%)}
+.product-flow-track:after{content:"";position:absolute;left:3%;right:3%;bottom:14%;height:1px;background:linear-gradient(90deg,transparent,#c7bdb7,transparent);opacity:.65}
+.moving-product{position:absolute;top:calc(13% + var(--lane)*21%);left:0;width:clamp(105px,12vw,176px);height:105px;object-fit:contain;opacity:0;transform:translate3d(120%,0,0) scale(var(--scale));animation:products-pass 32s linear infinite;animation-delay:calc(-1 * var(--delay));will-change:transform,opacity;filter:drop-shadow(0 8px 6px #37271d25)}
+@keyframes products-pass{
+0%{transform:translate3d(850px,0,0) scale(var(--scale));opacity:0}
+4%{opacity:1}
+23%{opacity:1}
+28%{transform:translate3d(-220px,0,0) scale(var(--scale));opacity:0}
+28.01%,100%{transform:translate3d(850px,0,0) scale(var(--scale));opacity:0}
+}
+.flow-heading{position:absolute;top:4%;left:9%;font-size:23px;transform:rotate(-6deg);z-index:2}
+.flow-footer{position:absolute;right:6%;bottom:9%;font-size:19px;transform:rotate(-6deg);z-index:2}
+.flow-key{position:absolute;left:4%;bottom:3%;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#a04a80;font-weight:700}
+@media(max-width:850px){.product-flow-scene{height:330px}.moving-product{width:130px}.flow-heading{font-size:17px}.flow-footer{font-size:15px}}
+@media(max-width:550px){.product-flow-scene{height:255px}.moving-product{width:100px;height:80px}.flow-key{font-size:8px}.flow-heading{top:0}}
+@media(prefers-reduced-motion:reduce){.moving-product{animation:none}.moving-product:nth-child(5n+1){opacity:1;transform:translate3d(70px,0,0) scale(.85)}}
+</style>
+<style>
+/* Each item is an independent transparent SVG: 5 distinct products per row. */
+.real-product-flow{height:440px;overflow:hidden;position:relative;isolation:isolate;background:transparent}
+.real-product-flow .unit-stage{position:absolute;inset:19% 0 17%;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 90%,transparent 100%)}
+.real-product-flow .unit-guide{position:absolute;top:53%;left:3%;right:3%;height:1px;background:linear-gradient(90deg,transparent,#d8cdc5,transparent);opacity:.55}
+.real-product-flow .unit-row{position:absolute;top:27%;left:0;display:flex;align-items:center;gap:4px;width:max-content;white-space:nowrap;animation:unit-travel 40s linear infinite;animation-delay:calc(var(--offset)*-2s);opacity:0;will-change:transform,opacity}
+.real-product-flow .unit-product{display:block;width:94px;height:90px;object-fit:contain;flex:none;filter:drop-shadow(0 6px 4px #44302322)}
+@keyframes unit-travel{0%{transform:translateX(900px);opacity:0}1%{opacity:1}23%{opacity:1}25%{transform:translateX(-520px);opacity:0}25.01%,100%{transform:translateX(900px);opacity:0}}
+.real-product-flow .flow-heading{top:4%;left:8%;font-size:22px}
+.real-product-flow .flow-footer{right:6%;bottom:11%;font-size:18px}
+@media(max-width:850px){.real-product-flow{height:335px}.real-product-flow .unit-product{width:70px;height:70px}.real-product-flow .unit-row{top:30%}.real-product-flow .flow-heading{font-size:17px}}
+@media(max-width:550px){.real-product-flow{height:250px}.real-product-flow .unit-product{width:55px;height:60px}.real-product-flow .unit-row{top:32%}.real-product-flow .flow-footer{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.real-product-flow .unit-row{animation:none;opacity:0}.real-product-flow .unit-row:first-of-type{opacity:1;transform:translateX(0)}}
+</style></head><body><div id="lanny-pattern" aria-hidden="true"></div><header class="header"><div class="wrap nav"><a href="#/" class="brand" aria-label="Lanny Group — на главную"><img class="word" src="assets/original-wordmark.png" alt="LANNY GROUP"><img class="mark" src="assets/original-mark.png" alt=""><small>Интеллект<br>в действии</small></a><button class="burger" onclick="document.querySelector('.links').classList.toggle('open')" aria-label="Открыть меню">☰</button><nav class="links"><a href="#/solutions">Бизнес-задачи</a><a href="#/tools">Инструменты</a><a href="#/consumer-lab">Consumer Lab</a><a href="#/innovations">Где инновации-то?</a><a href="#/breakfast">Бизнес-завтрак</a><a href="#/about">О нас</a></nav><a class="btn" href="#/contact">Обсудить задачу ↗</a></div></header><main id="app"></main><footer class="footer"><div class="wrap"><div class="cols"><div><a href="#/" class="brand"><img class="word" src="assets/original-wordmark.png" alt="LANNY GROUP"><img class="mark" src="assets/original-mark.png" alt=""></a><p style="color:#eadde6;margin-top:16px">Интеллект в действии</p><small>Стратегия · Потребители · Продукты · Технологии</small></div><div><strong>Направления</strong><a href="#/solutions">Бизнес-задачи</a><a href="#/tools">Инструменты</a><a href="#/consumer-lab">Consumer Lab</a><a href="#/about/cases">Кейсы</a></div><div><strong>Знакомство</strong><a href="#/innovations">Где инновации-то?</a><a href="#/breakfast">Бизнес-завтрак</a><a href="#/about/team">Команда</a><a href="#/about/coffee">Наши кофейни</a><a href="#/contact">Контакты</a></div></div><hr class="hr"><small>© Lanny Group · Концептуальный прототип · Заявки и регистрация пока не подключены</small></div></footer><script src="app.js"></script>
+<script>
+(function(){
+ const host=document.getElementById('lanny-pattern');if(!host)return;
+ const count=innerWidth<650?6:12;
+ const items=[];
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const width=()=>innerWidth,height=()=>innerHeight;
+ for(let i=0;i<count;i++){
+   const img=document.createElement('img');img.src='assets/check-original.png';img.alt='';host.appendChild(img);
+   const cols=4, rows=Math.ceil(count/cols),c=i%cols,r=Math.floor(i/cols);
+   items.push({img,x:(c+.45)*width()/cols,y:(r+.35)*height()/rows,
+    vx:(i%2?-1:1)*(.48+(i%4)*.08),vy:(i%3?-1:1)*(.30+(i%3)*.09),
+    angle:i*21,spin:(i%2?-1:1)*.11,bump:0});
+ }
+ let last=0;
+ function animate(time){
+   const dt=Math.min(2,(time-last)/16.7||1);last=time;
+   const W=width(),H=height(),size=52;
+   if(!reduced){
+     for(const p of items){
+       p.x+=p.vx*dt;p.y+=p.vy*dt;p.angle+=p.spin*dt;
+       if(p.x<0||p.x>W-size){p.vx=-p.vx;p.x=Math.max(0,Math.min(W-size,p.x))}
+       if(p.y<0||p.y>H-size){p.vy=-p.vy;p.y=Math.max(0,Math.min(H-size,p.y))}
+       p.bump*=.89;
+     }
+     for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++){
+       const a=items[i],b=items[j],dx=b.x-a.x,dy=b.y-a.y,dist=Math.hypot(dx,dy);
+       if(dist>0&&dist<48){
+         const nx=dx/dist,ny=dy/dist,sep=(48-dist)/2;
+         a.x-=nx*sep;a.y-=ny*sep;b.x+=nx*sep;b.y+=ny*sep;
+         const v=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;
+         if(v<0){
+           a.vx+=v*nx;b.vx-=v*nx;a.vy+=v*ny;b.vy-=v*ny;
+           a.spin+=.08;b.spin-=.08;a.bump=b.bump=.12;
+         }
+       }
+     }
+   }
+   for(const p of items)p.img.style.transform=`translate3d(${p.x}px,${p.y}px,0) rotate(${p.angle}deg) scale(${1+p.bump})`;
+   if(!reduced)requestAnimationFrame(animate);
+ }
+ requestAnimationFrame(animate);
+})();
+</script>
+</body></html>
